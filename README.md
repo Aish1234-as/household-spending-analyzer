@@ -25,10 +25,10 @@ python src/recurring.py
 - Full 500,000-row dataset
 
 ## Assumptions
-(e.g. monthly means 28 to 31 days)
+Monthly means 28 to 31 days between payments.
 
 ## Decisions
-(keyword priority: first match wins, see PLANNING.md)
+The first keyword that matches decides the category, based on dictionary order. A description with two keywords gets the first category. I plan to add an explicit priority field later.
 
 ## How I used AI
-(which parts you wrote, which you checked, what you asked for help with)
+I used Claude to plan the project, explain concepts, and check my understanding. I typed the ID generator, the categorization function, and the day-gap helper myself, testing each one as I went. I asked for the full code once, then wrote it myself with step-by-step guidance. I also used it to draft the prompt history and this README, which I reviewed and edited.
