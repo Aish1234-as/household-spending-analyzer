@@ -1,7 +1,7 @@
 # Household Spending Analyzer
 
 ## What it does
-This tool sorts bank transactions into categories, looks for recurring payments, and will compare spending to budgets. Currently it has the ID generator, categorization rules, and the day-gap helper.
+This tool sorts bank transactions into categories, looks for recurring payments, and compares spending to budgets. Currently it has the ID generator, categorization rules, day-gap helper, recurring check, budget comparison, and a small data generator.
 
 ## Setup
 1. Clone the repo
@@ -13,16 +13,22 @@ This tool sorts bank transactions into categories, looks for recurring payments,
 python src/categorize.py
 python src/ids.py
 python src/recurring.py
+python src/budget.py
+python src/generate_data.py
 
 ## What works
 - User ID generator
 - Keyword categorization
 - Day gap helper
-Recurring check: tells whether a series of dates is monthly (28 to 31 days between payments)
- Budget comparison: flags categories where spending is over budget 
+- Recurring check: tells whether a series of dates is monthly (28 to 31 days between payments)
+- Budget comparison: flags categories where spending is over budget
+- Data generator: creates 50 users and one account each, saved to data/accounts.csv (small sample, not the full 500,000 rows)
 
 ## What doesn't work yet
 - Full 500,000-row dataset
+- Ground-truth labels and categorization accuracy metrics
+- Validation checks for duplicate IDs and broken links
+- Recurring detection on the generated data
 
 ## Assumptions
 Monthly means 28 to 31 days between payments.
@@ -31,4 +37,4 @@ Monthly means 28 to 31 days between payments.
 The first keyword that matches decides the category, based on dictionary order. A description with two keywords gets the first category. I plan to add an explicit priority field later.
 
 ## How I used AI
-I used Claude to plan the project, explain concepts, and check my understanding. I typed the ID generator, the categorization function, and the day-gap helper myself, testing each one as I went. I asked for the full code once, then wrote it myself with step-by-step guidance. I also used it to draft the prompt history and this README, which I reviewed and edited.
+I used Claude to plan the project, explain concepts, and check my understanding. I typed the ID generator, the categorization function, the day-gap helper, and the data generator myself, testing each one as I went. I asked for the full code once, then wrote it myself with step-by-step guidance. I also used it to draft the prompt history and this README, which I reviewed and edited.
