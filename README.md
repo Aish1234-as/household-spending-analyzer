@@ -18,9 +18,9 @@ python src/recurring.py
 - User ID generator
 - Keyword categorization
 - Day gap helper
+Recurring check: tells whether a series of dates is monthly (28 to 31 days between payments) 
 
 ## What doesn't work yet
-- Recurring series detection
 - Budget comparison
 - Full 500,000-row dataset
 
