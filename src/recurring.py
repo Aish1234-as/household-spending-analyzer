@@ -8,5 +8,10 @@ def day_gaps(dates):
 print(day_gaps([date(2026, 1, 1), date(2026, 2, 1), date(2026, 3, 3)]))
 def is_monthly(gaps):
     return all(28 <= g <= 31 for g in gaps)
-print(is_monthly([31, 30]))
-print(is_monthly([31, 45]))
+
+def is_monthly_series(dates):
+    gaps = day_gaps(dates)
+    return is_monthly(gaps)
+
+print(is_monthly_series([date(2026, 1, 1), date(2026, 2, 1), date(2026, 3, 3)]))
+print(is_monthly_series([date(2026, 1, 1), date(2026, 1, 15), date(2026, 2, 1)]))
