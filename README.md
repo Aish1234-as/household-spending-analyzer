@@ -1,7 +1,7 @@
 # Household Spending Analyzer
 
 ## What it does
-(one or two sentences)
+This tool sorts bank transactions into categories, looks for recurring payments, and will compare spending to budgets. Currently it has the ID generator, categorization rules, and the day-gap helper.
 
 ## Setup
 1. Clone the repo
