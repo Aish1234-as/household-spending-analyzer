@@ -28,3 +28,5 @@ A tool that sorts transactions into categories, finds recurring payments like re
 - Budget: budget_id (BUD-<user-id>-2026-01-<category-code>), user_id, category_id, month, amount
 - RecurringSeries: series_id (REC-000001), user_id, merchant_id, frequency, expected_amount
 - Insight: insight_id, user_id, month, category_id, total_spent, budget_amount
+## Decisions
+- Categorization uses the first keyword that matches, based on dictionary order. A description containing two keywords (e.g. "SWIGGY NETFLIX") gets the first category. I plan to replace this with an explicit priority field later.
