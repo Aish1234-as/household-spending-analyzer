@@ -17,3 +17,14 @@ A tool that sorts transactions into categories, finds recurring payments like re
 5. Add budget comparison
 6. Add validation checks
 7. Scale up and write the README
+
+## Entities
+- UserProfile: user_id (USR-000001), name, city
+- Account: account_id (ACC-<user-id>-01), user_id, account_type
+- Merchant: merchant_id, name, aliases
+- Category: category_id, name, parent_category
+- CategoryRule: rule_id, merchant_pattern, category_id, priority
+- Transaction: transaction_id (TXN-2026-00000001), account_id, merchant_id, date, amount (negative = spending), description, category_id, is_transfer, is_refund
+- Budget: budget_id (BUD-<user-id>-2026-01-<category-code>), user_id, category_id, month, amount
+- RecurringSeries: series_id (REC-000001), user_id, merchant_id, frequency, expected_amount
+- Insight: insight_id, user_id, month, category_id, total_spent, budget_amount
