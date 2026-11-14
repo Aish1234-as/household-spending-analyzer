@@ -33,11 +33,6 @@ with open("data/transactions.csv", "w", newline="") as f:
     writer.writerows(transactions)
 
 category_for = {"Grocery store": "Food", "Swiggy": "Food", "Netflix": "Entertainment", "Electricity bill": "Utilities"}
-ground_truth = [(account_id, category_for[desc]) for (user_id, account_id), (_, _, desc, _) in zip(accounts, transactions)]
+ground_truth = [(r[0], category_for[r[2]]) for r in transactions if r[2] in category_for]
 ground_truth.append(("ACC-USR-000001-01", "Refund"))
 ground_truth.append(("ACC-USR-000002-01", "Transfer"))
-
-with open("data/ground_truth.csv", "w", newline="") as f:
-    writer = csv.writer(f)
-    writer.writerow(["account_id", "expected_category"])
-    writer.writerows(ground_truth)
