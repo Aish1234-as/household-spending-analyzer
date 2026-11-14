@@ -38,6 +38,7 @@ python src/generate_data.py
 - Reconciliation: 500 accounts with totals, grand total -122,850, and 0 duplicate rows (src/reconcile.py)
 - Timezone boundary check: a transaction at 18:45 UTC on Jan 15 is Jan 16 in IST; shown in src/timezone_check.py. The main dataset still stores plain dates, so this is a documented limitation, not yet handled in budgets
 - Budget category check: flags budget categories that are not in the taxonomy (Groceries was flagged against Food, Entertainment, and the rest) (src/budget_check.py)
+- Mid-size categorized run: 40,000 rows across 10,000 accounts, all matched a rule; this measures rule coverage on known merchants, not labeled accuracy (src/categorized_run.py)
 ## What doesn't work yet
 - Full 500,000-row, 12-month dataset (only a single 12-month test history exists)
 - Refunds are handled by a rule, but the sample refund row is the only test case
