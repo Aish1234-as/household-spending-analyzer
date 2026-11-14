@@ -1,13 +1,18 @@
 KEYWORDS = {
     "swiggy": "Food",
     "swgy": "Food",
+    "zomato": "Food",
     "grocery": "Food",
+    "dmart": "Food",
     "netflix": "Entertainment",
+    "hotstar": "Entertainment",
     "electricity": "Utilities",
+    "paytm": "Utilities",
     "uber": "Transport",
     "amazon": "Shopping",
     "rent payment": "Housing",
     "salary credit": "Income",
+    "atm": "Cash",
 }
 
 REFUND_WORDS = ["refund", "rfnd", "reversal", "cashback"]
