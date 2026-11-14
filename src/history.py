@@ -27,3 +27,10 @@ for n in range(1, 501):
     if is_monthly_series(rent_dates):
         monthly_count += 1
 print("Monthly rent detected in", monthly_count, "of 500 accounts")
+import time
+start = time.time()
+count = 0
+for n in range(1, 2001):
+    account_id = make_account_id(make_user_id(n))
+    count += len(make_history(account_id))
+print("Rows generated:", count, "in", round(time.time() - start, 2), "seconds")

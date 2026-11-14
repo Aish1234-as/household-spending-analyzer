@@ -32,6 +32,7 @@ python src/generate_data.py
 - Reproducibility: running the generator twice with the same seed produces identical output
 - Data generator: creates 500 users and one account each, saved to data/accounts.csv (small sample, not the full 500,000 rows)
 - Recurring detection at scale: monthly rent detected in 500 of 500 accounts across 12-month histories (src/history.py); the histories are generated, so this tests the logic, not real bank data
+- Scale test: generated 48,000 history rows (2,000 accounts, 12 months) in 0.08 seconds; a full 500,000-row run is projected but not measured
 ## What doesn't work yet
 - Full 500,000-row, 12-month dataset (only a single 12-month test history exists)
 - Refunds are handled by a rule, but the sample refund row is the only test case
