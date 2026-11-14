@@ -42,7 +42,7 @@ python src/generate_data.py
 - Full 500,000-row, 12-month dataset (only a single 12-month test history exists)
 - Refunds are handled by a rule, but the sample refund row is the only test case
 - Transfers are handled by a rule, but the sample transfer row is the only test case
--  Generalization to fresh merchants: 0.6 on five new descriptions (Blinkit, Uber Eats, Netflix Premium, Paytm Wallet, BigBasket). Misses: Uber Eats matched the Uber rule, and BigBasket has no rule. Blinkit matched only because it contains "grocery" (src/fresh_check.py)
+-- Generalization to unseen merchants: 0.6 on five fresh merchant descriptions (src/fresh_check.py), where brands without rules fail. Known brands with new wording scored 1.0 (src/fresh_check2.py), which measures wording variation, not new merchants
 - Timezone-aware dates in budgets: transactions store plain dates and are not yet converted to local time before grouping
 
 
