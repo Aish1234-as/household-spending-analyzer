@@ -26,7 +26,7 @@ python src/generate_data.py
 - Validation checks: duplicate IDs and accounts that point to a real user (src/validate.py)
 - Sample transactions: one grocery transaction per account, with a fixed seed (data/transactions.csv)
 - Ground-truth labels: expected category for each sample transaction (data/ground_truth.csv)
-
+- Categorization accuracy: compares the categorizer against ground-truth labels (100% on the uniform sample, which is not a real accuracy test)
 ## What doesn't work yet
 - Varied transactions (currently one grocery transaction per account)
 - Full 500,000-row dataset
