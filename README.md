@@ -30,6 +30,7 @@ python src/generate_data.py
 - Recurring check on generated accounts (runs on the sample; every account has one transaction, so all show False)
 - Varied sample transactions (grocery, Netflix, Swiggy, electricity) with accuracy 1.0 on the sample
 - Reproducibility: running the generator twice with the same seed produces identical output
+- Data generator: creates 500 users and one account each, saved to data/accounts.csv (small sample, not the full 500,000 rows)
 ## What doesn't work yet
 - Full 500,000-row dataset
 - Refunds are treated as spending (the categorizer matches "Refund: Swiggy" to Food)

@@ -6,7 +6,7 @@ from ids import make_user_id, make_account_id
 random.seed(20261022)
 
 accounts = []
-for n in range(1, 51):
+for n in range(1, 501):
     user_id = make_user_id(n)
     accounts.append((user_id, make_account_id(user_id)))
 
