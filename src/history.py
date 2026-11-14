@@ -18,3 +18,12 @@ rent_dates = [date.fromisoformat(r[1]) for r in make_history("ACC-USR-000001-01"
 print(is_monthly_series(rent_dates))
 irregular = [date(2026, 1, 3), date(2026, 1, 20), date(2026, 3, 9)]
 print(is_monthly_series(irregular))
+from ids import make_user_id, make_account_id
+
+monthly_count = 0
+for n in range(1, 501):
+    account_id = make_account_id(make_user_id(n))
+    rent_dates = [date.fromisoformat(r[1]) for r in make_history(account_id) if r[2] == "Rent"]
+    if is_monthly_series(rent_dates):
+        monthly_count += 1
+print("Monthly rent detected in", monthly_count, "of 500 accounts")

@@ -31,7 +31,7 @@ python src/generate_data.py
 - Varied sample transactions (grocery, Netflix, Swiggy, electricity) with accuracy 1.0 on the sample
 - Reproducibility: running the generator twice with the same seed produces identical output
 - Data generator: creates 500 users and one account each, saved to data/accounts.csv (small sample, not the full 500,000 rows)
- Recurring detection on 12-month history: monthly rent detected as recurring, irregular payments flagged (src/history.py)
+- Recurring detection at scale: monthly rent detected in 500 of 500 accounts across 12-month histories (src/history.py); the histories are generated, so this tests the logic, not real bank data
 ## What doesn't work yet
 - Full 500,000-row, 12-month dataset (only a single 12-month test history exists)
 - Refunds are handled by a rule, but the sample refund row is the only test case
