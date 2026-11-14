@@ -2,6 +2,7 @@ KEYWORDS = {
     "swiggy": "Food",
     "netflix": "Entertainment",
     "grocery": "Food",
+    "electricity": "Utilities",
 }
 
 def categorize(description):
