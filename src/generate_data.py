@@ -17,7 +17,7 @@ with open("data/accounts.csv", "w", newline="") as f:
     writer.writerow(["user_id", "account_id"])
     writer.writerows(accounts)
 
-merchants = ["Grocery store", "Netflix", "Swiggy", "Electricity bill"]
+merchants = ["Grocery store", "Netflix", "Swiggy", "Electricity bill", "Uber", "Amazon"]
 transactions = []
 for user_id, account_id in accounts:
     description = random.choice(merchants)
@@ -32,7 +32,12 @@ with open("data/transactions.csv", "w", newline="") as f:
     writer.writerow(["account_id", "date", "description", "amount"])
     writer.writerows(transactions)
 
-category_for = {"Grocery store": "Food", "Swiggy": "Food", "Netflix": "Entertainment", "Electricity bill": "Utilities"}
+category_for = {"Grocery store": "Food", "Swiggy": "Food", "Netflix": "Entertainment", "Electricity bill": "Utilities", "Uber": "Transport", "Amazon": "Shopping"}
 ground_truth = [(r[0], category_for[r[2]]) for r in transactions if r[2] in category_for]
 ground_truth.append(("ACC-USR-000001-01", "Refund"))
 ground_truth.append(("ACC-USR-000002-01", "Transfer"))
+
+with open("data/ground_truth.csv", "w", newline="") as f:
+    writer = csv.writer(f)
+    writer.writerow(["account_id", "expected_category"])
+    writer.writerows(ground_truth)

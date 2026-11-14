@@ -10,8 +10,9 @@ with open("data/ground_truth.csv") as f:
     truth = [r["expected_category"] for r in csv.DictReader(f)]
 
 predicted = [categorize(r["description"]) for r in rows]
-print(accuracy(predicted, truth))
 
 for p, e, r in zip(predicted, truth, rows):
     if p != e:
         print(r)
+
+print("SAMPLE ACCURACY:", accuracy(predicted, truth))

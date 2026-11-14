@@ -3,6 +3,8 @@ KEYWORDS = {
     "grocery": "Food",
     "netflix": "Entertainment",
     "electricity": "Utilities",
+    "uber": "Transport",
+    "amazon": "Shopping",
 }
 
 def categorize(description):

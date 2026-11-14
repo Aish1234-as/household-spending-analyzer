@@ -26,7 +26,7 @@ python src/generate_data.py
 - Validation checks: duplicate IDs and accounts that point to a real user (src/validate.py)
 - Sample transactions: varied merchants per account (grocery, Netflix, Swiggy, electricity), with a fixed seed (data/transactions.csv)
 - Ground-truth labels: expected category for each sample transaction (data/ground_truth.csv)
-- Categorization: keyword rules plus refund and transfer detection; 1.0 accuracy on the 500-account sample, which uses four merchant types and is not a real-world accuracy test
+-  Categorization: keyword rules plus refund and transfer detection. Accuracy was 0.685 when Uber and Amazon were uncovered on the 500-account sample, and 1.0 after adding keyword rules for them (the sample uses six merchant types, so this is not a real-world accuracy test)
 - Recurring check on generated accounts (runs on the sample; every account has one transaction, so all show False)
 - Varied sample transactions (grocery, Netflix, Swiggy, electricity) with accuracy 1.0 on the sample
 - Reproducibility: running the generator twice with the same seed produces identical output
