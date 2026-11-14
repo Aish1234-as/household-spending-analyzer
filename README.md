@@ -29,6 +29,7 @@ python src/generate_data.py
 - Categorization accuracy: compares the categorizer against ground-truth labels (100% on the uniform sample, which is not a real accuracy test)
 - Recurring check on generated accounts (runs on the sample; every account has one transaction, so all show False)
 - Varied sample transactions (grocery, Netflix, Swiggy, electricity) with accuracy 1.0 on the sample
+- Reproducibility: running the generator twice with the same seed produces identical output
 ## What doesn't work yet
 - Full 500,000-row dataset
 
