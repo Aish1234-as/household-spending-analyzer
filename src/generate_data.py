@@ -26,3 +26,10 @@ with open("data/transactions.csv", "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerow(["account_id", "date", "description", "amount"])
     writer.writerows(transactions)
+
+ground_truth = [(account_id, "Food") for user_id, account_id in accounts]
+
+with open("data/ground_truth.csv", "w", newline="") as f:
+    writer = csv.writer(f)
+    writer.writerow(["account_id", "expected_category"])
+    writer.writerows(ground_truth)
