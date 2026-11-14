@@ -27,10 +27,11 @@ python src/generate_data.py
 - Sample transactions: one grocery transaction per account, with a fixed seed (data/transactions.csv)
 - Ground-truth labels: expected category for each sample transaction (data/ground_truth.csv)
 - Categorization accuracy: compares the categorizer against ground-truth labels (100% on the uniform sample, which is not a real accuracy test)
+- Recurring check on generated accounts (runs on the sample; every account has one transaction, so all show False)
 ## What doesn't work yet
 - Varied transactions (currently one grocery transaction per account)
 - Full 500,000-row dataset
-- Recurring detection on the generated data
+
 
 ## Assumptions
 Monthly means 28 to 31 days between payments.
