@@ -7,9 +7,9 @@ merchants = ["Grocery store", "Netflix", "Swiggy", "Electricity bill", "Uber", "
 
 rows = 0
 correct = 0
-for n in range(1, 10001):
+for n in range(1, 500001):
     account_id = make_account_id(make_user_id(n))
-    for _ in range(4):
+    for _ in range(24):
         description = random.choice(merchants)
         predicted = categorize(description)
         rows += 1

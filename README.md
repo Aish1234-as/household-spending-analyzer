@@ -33,7 +33,7 @@ python src/generate_data.py
 - Data generator: creates 500 users and one account each, saved to data/accounts.csv (small sample, not the full 500,000 rows)
 - Recurring detection at scale: monthly rent detected in 500 of 500 accounts across 12-month histories (src/history.py); the histories are generated, so this tests the logic, not real bank data
 - Scale test: generated 12,000,000 history rows (500,000 accounts, 12 months each, 24 rows per account) in 6.79 seconds on this machine; this is row generation only, not a categorized or validated dataset
-- Full-size categorization check: 12,000,000 phrases categorized in 29.33 seconds with accuracy 1.0 on known phrasings (src/full_check.py); this tests known variants, not unseen ones
+- Full-size categorized run: 12,000,000 rows across 500,000 accounts, all matched a rule; this measures rule coverage on eight known merchant names, not labeled accuracy (src/categorized_run.py)
 - Data dictionary: column types, rules, and ID formats for each table (docs/DATA_DICTIONARY.md)
 - Reconciliation: 500 accounts with totals, grand total -122,850, and 0 duplicate rows (src/reconcile.py)
 - Timezone boundary check: a transaction at 18:45 UTC on Jan 15 is Jan 16 in IST; shown in src/timezone_check.py. The main dataset still stores plain dates, so this is a documented limitation, not yet handled in budgets
