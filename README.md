@@ -24,7 +24,7 @@ python src/generate_data.py
 - Budget comparison: flags categories where spending is over budget
 - Data generator: creates 50 users and one account each, saved to data/accounts.csv (small sample, not the full 500,000 rows)
 - Validation checks: duplicate IDs and accounts that point to a real user (src/validate.py)
-- Sample transactions: one grocery transaction per account, with a fixed seed (data/transactions.csv)
+- Sample transactions: varied merchants per account (grocery, Netflix, Swiggy, electricity), with a fixed seed (data/transactions.csv)
 - Ground-truth labels: expected category for each sample transaction (data/ground_truth.csv)
 - Categorization accuracy: compares the categorizer against ground-truth labels (100% on the uniform sample, which is not a real accuracy test)
 - Recurring check on generated accounts (runs on the sample; every account has one transaction, so all show False)
