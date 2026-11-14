@@ -32,6 +32,8 @@ python src/generate_data.py
 - Reproducibility: running the generator twice with the same seed produces identical output
 ## What doesn't work yet
 - Full 500,000-row dataset
+- Refunds are treated as spending (the categorizer matches "Refund: Swiggy" to Food)
+- Transfers are not recognized (labeled Transfer in ground truth, categorized as Uncategorized)
 
 
 ## Assumptions
