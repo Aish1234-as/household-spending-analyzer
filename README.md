@@ -23,11 +23,11 @@ python src/generate_data.py
 - Recurring check: tells whether a series of dates is monthly (28 to 31 days between payments)
 - Budget comparison: flags categories where spending is over budget
 - Data generator: creates 50 users and one account each, saved to data/accounts.csv (small sample, not the full 500,000 rows)
+- Validation checks: duplicate IDs and accounts that point to a real user (src/validate.py)
 
 ## What doesn't work yet
 - Full 500,000-row dataset
 - Ground-truth labels and categorization accuracy metrics
-- Validation checks for duplicate IDs and broken links
 - Recurring detection on the generated data
 
 ## Assumptions
