@@ -36,11 +36,13 @@ python src/generate_data.py
 - Full-size categorization check: 12,000,000 phrases categorized in 29.33 seconds with accuracy 1.0 on known phrasings (src/full_check.py); this tests known variants, not unseen ones
 - Data dictionary: column types, rules, and ID formats for each table (docs/DATA_DICTIONARY.md)
 - Reconciliation: 500 accounts with totals, grand total -122,850, and 0 duplicate rows (src/reconcile.py)
+- Timezone boundary check: a transaction at 18:45 UTC on Jan 15 is Jan 16 in IST; shown in src/timezone_check.py. The main dataset still stores plain dates, so this is a documented limitation, not yet handled in budgets
 ## What doesn't work yet
 - Full 500,000-row, 12-month dataset (only a single 12-month test history exists)
 - Refunds are handled by a rule, but the sample refund row is the only test case
 - Transfers are handled by a rule, but the sample transfer row is the only test case
--- Realistic accuracy on unseen phrasings: 0.0 on five new merchant descriptions (Zomato, Paytm, Hotstar, ATM, DMart), since keyword rules only match phrasings they were written for (src/unseen_check.py)
+- Realistic accuracy on unseen phrasings: 0.0 on five new merchant descriptions (Zomato, Paytm, Hotstar, ATM, DMart), since keyword rules only match phrasings they were written for (src/unseen_check.py)
+- Timezone-aware dates in budgets: transactions store plain dates and are not yet converted to local time before grouping
 
 
 ## Assumptions
