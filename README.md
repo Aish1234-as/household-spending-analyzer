@@ -31,10 +31,12 @@ python src/generate_data.py
 - Varied sample transactions (grocery, Netflix, Swiggy, electricity) with accuracy 1.0 on the sample
 - Reproducibility: running the generator twice with the same seed produces identical output
 - Data generator: creates 500 users and one account each, saved to data/accounts.csv (small sample, not the full 500,000 rows)
+ Recurring detection on 12-month history: monthly rent detected as recurring, irregular payments flagged (src/history.py)
 ## What doesn't work yet
-- Full 500,000-row dataset
-- Refunds are treated as spending (the categorizer matches "Refund: Swiggy" to Food)
-- Transfers are not recognized (labeled Transfer in ground truth, categorized as Uncategorized)
+- Full 500,000-row, 12-month dataset (only a single 12-month test history exists)
+- Refunds are handled by a rule, but the sample refund row is the only test case
+- Transfers are handled by a rule, but the sample transfer row is the only test case
+- Realistic accuracy on merchants the keyword list does not cover
 
 
 ## Assumptions
