@@ -33,11 +33,12 @@ python src/generate_data.py
 - Data generator: creates 500 users and one account each, saved to data/accounts.csv (small sample, not the full 500,000 rows)
 - Recurring detection at scale: monthly rent detected in 500 of 500 accounts across 12-month histories (src/history.py); the histories are generated, so this tests the logic, not real bank data
 - - Scale test: generated 12,000,000 history rows (500,000 accounts, 12 months each, 24 rows per account) in 6.79 seconds on this machine; this is row generation only, not a categorized or validated dataset
+- Full-size categorization check: 12,000,000 phrases categorized in 29.33 seconds with accuracy 1.0 on known phrasings (src/full_check.py); this tests known variants, not unseen ones
 ## What doesn't work yet
 - Full 500,000-row, 12-month dataset (only a single 12-month test history exists)
 - Refunds are handled by a rule, but the sample refund row is the only test case
 - Transfers are handled by a rule, but the sample transfer row is the only test case
-- Realistic accuracy on merchants the keyword list does not cover
+- - Realistic accuracy on merchants and phrasings the keyword list has not seen
 
 
 ## Assumptions
