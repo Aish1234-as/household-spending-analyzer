@@ -29,4 +29,10 @@ def categorize(description):
     for keyword, category in KEYWORDS.items():
         if keyword in text:
             return category
+    if "grocer" in text or "mart" in text:
+        return "Food"
+    if "ride" in text or "trip" in text:
+        return "Transport"
+    if "subscription" in text or "premium" in text:
+        return "Entertainment"
     return "Uncategorized"

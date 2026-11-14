@@ -41,12 +41,12 @@ python src/generate_data.py
 - Mid-size categorized run: 40,000 rows across 10,000 accounts, all matched a rule; this measures rule coverage on known merchants, not labeled accuracy (src/categorized_run.py)
 - Labeled full-size accuracy: 1.0 across 12,000,000 rows with known merchant labels (src/labeled_full.py); this is accuracy on known merchants, not generalization to new ones
 ## What doesn't work yet
-- Full 500,000-row, 12-month dataset (only a single 12-month test history exists)
+-- Full 500,000-row, 12-month dataset (only a single 12-month test history exists)
 - Refunds are handled by a rule, but the sample refund row is the only test case
 - Transfers are handled by a rule, but the sample transfer row is the only test case
--- Generalization to unseen merchants: 0.6 on five fresh merchant descriptions (src/fresh_check.py), where brands without rules fail. Known brands with new wording scored 1.0 (src/fresh_check2.py), which measures wording variation, not new merchants
+- Generalization to unseen merchants: 0.6 on five fresh merchant descriptions (src/fresh_check.py), where brands without rules fail. Known brands with new wording scored 1.0 (src/fresh_check2.py), which measures wording variation, not new merchants
+- Fallback on category words (grocer, mart, ride, trip, subscription, premium): 1.0 on five descriptions written after the words were chosen, so it measures the fallback logic, not generalization to new merchants (src/fresh_check3.py)
 - Timezone-aware dates in budgets: transactions store plain dates and are not yet converted to local time before grouping
-
 
 ## Assumptions
 Monthly means 28 to 31 days between payments.
