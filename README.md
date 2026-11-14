@@ -24,8 +24,10 @@ python src/generate_data.py
 - Budget comparison: flags categories where spending is over budget
 - Data generator: creates 50 users and one account each, saved to data/accounts.csv (small sample, not the full 500,000 rows)
 - Validation checks: duplicate IDs and accounts that point to a real user (src/validate.py)
+- Sample transactions: one grocery transaction per account, with a fixed seed (data/transactions.csv)
 
 ## What doesn't work yet
+- Varied transactions (currently one grocery transaction per account)
 - Full 500,000-row dataset
 - Ground-truth labels and categorization accuracy metrics
 - Recurring detection on the generated data
