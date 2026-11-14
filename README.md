@@ -22,11 +22,11 @@ python src/generate_data.py
 - Day gap helper
 - Recurring check: tells whether a series of dates is monthly (28 to 31 days between payments)
 - Budget comparison: flags categories where spending is over budget
-- Data generator: creates 50 users and one account each, saved to data/accounts.csv (small sample, not the full 500,000 rows)
+- Data generator: creates 500 users and one account each, saved to data/accounts.csv (small sample, not the full 500,000 rows)
 - Validation checks: duplicate IDs and accounts that point to a real user (src/validate.py)
 - Sample transactions: varied merchants per account (grocery, Netflix, Swiggy, electricity), with a fixed seed (data/transactions.csv)
 - Ground-truth labels: expected category for each sample transaction (data/ground_truth.csv)
-- Categorization accuracy: compares the categorizer against ground-truth labels (100% on the uniform sample, which is not a real accuracy test)
+- Categorization: keyword rules plus refund and transfer detection; 1.0 accuracy on the 500-account sample, which uses four merchant types and is not a real-world accuracy test
 - Recurring check on generated accounts (runs on the sample; every account has one transaction, so all show False)
 - Varied sample transactions (grocery, Netflix, Swiggy, electricity) with accuracy 1.0 on the sample
 - Reproducibility: running the generator twice with the same seed produces identical output
